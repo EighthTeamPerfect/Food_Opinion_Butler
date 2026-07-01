@@ -158,7 +158,7 @@ if __name__ == "__main__":
 
     # train_dataset = TextDataset(data)
     # print(train_dataset)
-    data = load_raw_data(conf.test_path)
+    data = load_raw_data(conf.train_path)
     train_dataset = TextDataset(data)
     train_loader = DataLoader(train_dataset, shuffle=True, batch_size=conf.batch_size,collate_fn=collate_fn)
     for batch in train_loader:

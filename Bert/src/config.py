@@ -13,6 +13,7 @@ class Config(object):
         self.model_name = "bert" # 模型名称
         self.data_path = "../data"  #数据集的根路径
         self.train_path = self.data_path + "\\train.txt"  # 训练集
+        # self.train_path = self.data_path + "\\csv.txt"  # 训练集
         self.dev_path = self.data_path + "\\dev.txt"  # 少量验证集，快速验证
         self.test_path = self.data_path + "\\test.txt"  # 测试集
 
@@ -35,7 +36,7 @@ class Config(object):
         # self.num_classes = len(self.class_list)  # 类别数
         self.num_epochs = 2  # epoch数
         self.batch_size = 256  # mini-batch大小
-        self.pad_size = 32  # 每句话处理成的长度(短填长切)
+        self.pad_size = 64  # 每句话处理成的长度(短填长切)
         self.learning_rate = 5e-5  # 学习率
         self.bert_path = "../bert-base-chinese"  # 预训练BERT模型的路径
         self.bert_model = BertModel.from_pretrained(self.bert_path)
@@ -59,3 +60,7 @@ if __name__ == '__main__':
     print(input_size)
     print(tokens)
     # print(conf.class_list)
+    print(conf.aspect_label_id_class_list)
+    print(conf.senti_label_class_list)
+    print(conf.risk_label_id_class)
+    print(conf.risk_label_id_class[0])
